@@ -1,0 +1,7 @@
+com/altamira/demo_spring_boot/entities/Person.class
+com/altamira/demo_spring_boot/dto/PersonRequest.class
+com/altamira/demo_spring_boot/api/DozerMapping.class
+com/altamira/demo_spring_boot/DemoSpringBootApplication.class
+com/altamira/demo_spring_boot/api/PersonApi.class
+com/altamira/demo_spring_boot/services/DemosServices.class
+com/altamira/demo_spring_boot/dao/DemoRepository.class
