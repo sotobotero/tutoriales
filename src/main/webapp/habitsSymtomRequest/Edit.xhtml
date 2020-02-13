@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HabitsSymtomRequestEditDlg" widgetVar="HabitsSymtomRequestEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditHabitsSymtomRequestTitle}">
+            <h:form id="HabitsSymtomRequestEditForm">
+                <h:panelGroup id="display">
+                    <h:panelGrid columns="6" rendered="#{habitsSymtomRequestController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_sleepHours}" for="sleepHours" />
+                        <p:inputText id="sleepHours" value="#{habitsSymtomRequestController.selected.sleepHours}" title="#{bundle.EditHabitsSymtomRequestTitle_sleepHours}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_diet}" for="diet" />
+                        <p:inputText id="diet" value="#{habitsSymtomRequestController.selected.diet}" title="#{bundle.EditHabitsSymtomRequestTitle_diet}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_nutritionalSupplements}" for="nutritionalSupplements" />
+                        <p:inputText id="nutritionalSupplements" value="#{habitsSymtomRequestController.selected.nutritionalSupplements}" title="#{bundle.EditHabitsSymtomRequestTitle_nutritionalSupplements}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_bristol}" for="bristol" />
+                        <p:inputText id="bristol" value="#{habitsSymtomRequestController.selected.bristol}" title="#{bundle.EditHabitsSymtomRequestTitle_bristol}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_dailyDepositions}" for="dailyDepositions" />
+                        <p:inputText id="dailyDepositions" value="#{habitsSymtomRequestController.selected.dailyDepositions}" title="#{bundle.EditHabitsSymtomRequestTitle_dailyDepositions}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_weeklyDepositions}" for="weeklyDepositions" />
+                        <p:inputText id="weeklyDepositions" value="#{habitsSymtomRequestController.selected.weeklyDepositions}" title="#{bundle.EditHabitsSymtomRequestTitle_weeklyDepositions}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_abdominalPain}" for="abdominalPain" />
+                        <p:inputText id="abdominalPain" value="#{habitsSymtomRequestController.selected.abdominalPain}" title="#{bundle.EditHabitsSymtomRequestTitle_abdominalPain}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_abdominalDistension}" for="abdominalDistension" />
+                        <p:inputText id="abdominalDistension" value="#{habitsSymtomRequestController.selected.abdominalDistension}" title="#{bundle.EditHabitsSymtomRequestTitle_abdominalDistension}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_defecatoryHabitHappy}" for="defecatoryHabitHappy" />
+                        <p:inputText id="defecatoryHabitHappy" value="#{habitsSymtomRequestController.selected.defecatoryHabitHappy}" title="#{bundle.EditHabitsSymtomRequestTitle_defecatoryHabitHappy}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_IBSSeverityScore}" for="IBSSeverityScore" />
+                        <p:inputText id="IBSSeverityScore" value="#{habitsSymtomRequestController.selected.IBSSeverityScore}" title="#{bundle.EditHabitsSymtomRequestTitle_IBSSeverityScore}" />
+                        <p:outputLabel value="#{bundle.EditHabitsSymtomRequestLabel_patientId}" for="patientId" />
+                        <p:inputText id="patientId" value="#{habitsSymtomRequestController.selected.patientId}" title="#{bundle.EditHabitsSymtomRequestTitle_patientId}" />
+                    </h:panelGrid>
+                    <p:commandButton actionListener="#{habitsSymtomRequestController.update}" value="#{bundle.Save}" update="display,:HabitsSymtomRequestListForm:datalist,:growl" oncomplete="handleSubmit(args, 'HabitsSymtomRequestEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="HabitsSymtomRequestEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

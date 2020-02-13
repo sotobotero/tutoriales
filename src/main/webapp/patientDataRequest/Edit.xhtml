@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PatientDataRequestEditDlg" widgetVar="PatientDataRequestEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditPatientDataRequestTitle}">
+            <h:form id="PatientDataRequestEditForm">
+                <h:panelGroup id="display">
+                    <h:panelGrid columns="6" rendered="#{patientDataRequestController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_patientDocumentNumber}" for="patientDocumentNumber" />
+                        <p:inputText id="patientDocumentNumber" value="#{patientDataRequestController.selected.patientDocumentNumber}" title="#{bundle.EditPatientDataRequestTitle_patientDocumentNumber}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_name}" for="name" />
+                        <p:inputText id="name" value="#{patientDataRequestController.selected.name}" title="#{bundle.EditPatientDataRequestTitle_name}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_phone}" for="phone" />
+                        <p:inputText id="phone" value="#{patientDataRequestController.selected.phone}" title="#{bundle.EditPatientDataRequestTitle_phone}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_addres}" for="addres" />
+                        <p:inputText id="addres" value="#{patientDataRequestController.selected.addres}" title="#{bundle.EditPatientDataRequestTitle_addres}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_surname}" for="surname" />
+                        <p:inputText id="surname" value="#{patientDataRequestController.selected.surname}" title="#{bundle.EditPatientDataRequestTitle_surname}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_birdDate}" for="birdDate" />
+                        <p:inputText id="birdDate" value="#{patientDataRequestController.selected.birdDate}" title="#{bundle.EditPatientDataRequestTitle_birdDate}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_team}" for="team" />
+                        <p:inputText id="team" value="#{patientDataRequestController.selected.team}" title="#{bundle.EditPatientDataRequestTitle_team}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_weight}" for="weight" />
+                        <p:inputText id="weight" value="#{patientDataRequestController.selected.weight}" title="#{bundle.EditPatientDataRequestTitle_weight}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_size}" for="size" />
+                        <p:inputText id="size" value="#{patientDataRequestController.selected.size}" title="#{bundle.EditPatientDataRequestTitle_size}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_IMC}" for="IMC" />
+                        <p:inputText id="IMC" value="#{patientDataRequestController.selected.IMC}" title="#{bundle.EditPatientDataRequestTitle_IMC}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_folds}" for="folds" />
+                        <p:inputText id="folds" value="#{patientDataRequestController.selected.folds}" title="#{bundle.EditPatientDataRequestTitle_folds}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_perimeters}" for="perimeters" />
+                        <p:inputText id="perimeters" value="#{patientDataRequestController.selected.perimeters}" title="#{bundle.EditPatientDataRequestTitle_perimeters}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_diameters}" for="diameters" />
+                        <p:inputText id="diameters" value="#{patientDataRequestController.selected.diameters}" title="#{bundle.EditPatientDataRequestTitle_diameters}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_allergiesMedical}" for="allergiesMedical" />
+                        <p:inputText id="allergiesMedical" value="#{patientDataRequestController.selected.allergiesMedical}" title="#{bundle.EditPatientDataRequestTitle_allergiesMedical}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_food}" for="food" />
+                        <p:inputText id="food" value="#{patientDataRequestController.selected.food}" title="#{bundle.EditPatientDataRequestTitle_food}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_other}" for="other" />
+                        <p:inputText id="other" value="#{patientDataRequestController.selected.other}" title="#{bundle.EditPatientDataRequestTitle_other}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_pastMedical}" for="pastMedical" />
+                        <p:inputText id="pastMedical" value="#{patientDataRequestController.selected.pastMedical}" title="#{bundle.EditPatientDataRequestTitle_pastMedical}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_surgical}" for="surgical" />
+                        <p:inputText id="surgical" value="#{patientDataRequestController.selected.surgical}" title="#{bundle.EditPatientDataRequestTitle_surgical}" />
+                        <p:outputLabel value="#{bundle.EditPatientDataRequestLabel_traumatiInjuries}" for="traumatiInjuries" />
+                        <p:inputText id="traumatiInjuries" value="#{patientDataRequestController.selected.traumatiInjuries}" title="#{bundle.EditPatientDataRequestTitle_traumatiInjuries}" />
+                    </h:panelGrid>
+                    <p:commandButton actionListener="#{patientDataRequestController.update}" value="#{bundle.Save}" update="display,:PatientDataRequestListForm:datalist,:growl" oncomplete="handleSubmit(args, 'PatientDataRequestEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PatientDataRequestEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

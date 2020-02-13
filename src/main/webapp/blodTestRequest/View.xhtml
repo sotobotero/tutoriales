@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="BlodTestRequestViewDlg" widgetVar="BlodTestRequestViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewBlodTestRequestTitle}">
+            <h:form id="BlodTestRequestViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="6" rendered="#{blodTestRequestController.selected != null}">
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_id}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.id}" title="#{bundle.ViewBlodTestRequestTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_leukocytes}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.leukocytes}" title="#{bundle.ViewBlodTestRequestTitle_leukocytes}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_hematies}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.hematies}" title="#{bundle.ViewBlodTestRequestTitle_hematies}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_hemoglobin}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.hemoglobin}" title="#{bundle.ViewBlodTestRequestTitle_hemoglobin}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_hematocrit}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.hematocrit}" title="#{bundle.ViewBlodTestRequestTitle_hematocrit}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_VCM}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.VCM}" title="#{bundle.ViewBlodTestRequestTitle_VCM}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_HCM}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.HCM}" title="#{bundle.ViewBlodTestRequestTitle_HCM}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_CMCH}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.CMCH}" title="#{bundle.ViewBlodTestRequestTitle_CMCH}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_RDW}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.RDW}" title="#{bundle.ViewBlodTestRequestTitle_RDW}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_platelets}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.platelets}" title="#{bundle.ViewBlodTestRequestTitle_platelets}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_VPM}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.VPM}" title="#{bundle.ViewBlodTestRequestTitle_VPM}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_glucose}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.glucose}" title="#{bundle.ViewBlodTestRequestTitle_glucose}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_urea}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.urea}" title="#{bundle.ViewBlodTestRequestTitle_urea}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_creatinine}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.creatinine}" title="#{bundle.ViewBlodTestRequestTitle_creatinine}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_sodium}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.sodium}" title="#{bundle.ViewBlodTestRequestTitle_sodium}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_potassium}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.potassium}" title="#{bundle.ViewBlodTestRequestTitle_potassium}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_totalCholesterol}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.totalCholesterol}" title="#{bundle.ViewBlodTestRequestTitle_totalCholesterol}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_HDLcholesterol}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.HDLcholesterol}" title="#{bundle.ViewBlodTestRequestTitle_HDLcholesterol}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_VLDLcholesterol}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.VLDLcholesterol}" title="#{bundle.ViewBlodTestRequestTitle_VLDLcholesterol}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_LDLcholesterol}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.LDLcholesterol}" title="#{bundle.ViewBlodTestRequestTitle_LDLcholesterol}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_TG}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.TG}" title="#{bundle.ViewBlodTestRequestTitle_TG}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_lipoproteins}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.lipoproteins}" title="#{bundle.ViewBlodTestRequestTitle_lipoproteins}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_acAscorbic}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.acAscorbic}" title="#{bundle.ViewBlodTestRequestTitle_acAscorbic}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_vitaE}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.vitaE}" title="#{bundle.ViewBlodTestRequestTitle_vitaE}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_vitaA}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.vitaA}" title="#{bundle.ViewBlodTestRequestTitle_vitaA}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_vitaB}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.vitaB}" title="#{bundle.ViewBlodTestRequestTitle_vitaB}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_vitaD}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.vitaD}" title="#{bundle.ViewBlodTestRequestTitle_vitaD}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_iodo}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.iodo}" title="#{bundle.ViewBlodTestRequestTitle_iodo}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_faith}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.faith}" title="#{bundle.ViewBlodTestRequestTitle_faith}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_znc}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.znc}" title="#{bundle.ViewBlodTestRequestTitle_znc}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_mg}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.mg}" title="#{bundle.ViewBlodTestRequestTitle_mg}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_albumin}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.albumin}" title="#{bundle.ViewBlodTestRequestTitle_albumin}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_prealbumin}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.prealbumin}" title="#{bundle.ViewBlodTestRequestTitle_prealbumin}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_transferrin}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.transferrin}" title="#{bundle.ViewBlodTestRequestTitle_transferrin}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_igAsecretor}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.igAsecretor}" title="#{bundle.ViewBlodTestRequestTitle_igAsecretor}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_igdosage}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.igdosage}" title="#{bundle.ViewBlodTestRequestTitle_igdosage}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_igGsubclasses}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.igGsubclasses}" title="#{bundle.ViewBlodTestRequestTitle_igGsubclasses}"/>
+                        <h:outputText value="#{bundle.ViewBlodTestRequestLabel_patientId}"/>
+                        <h:outputText value="#{blodTestRequestController.selected.patientId}" title="#{bundle.ViewBlodTestRequestTitle_patientId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="BlodTestRequestViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

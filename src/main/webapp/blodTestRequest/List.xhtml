@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListBlodTestRequestTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="BlodTestRequestListForm">
+                <p:panel header="#{bundle.ListBlodTestRequestTitle}">
+                    <p:dataTable id="datalist" value="#{blodTestRequestController.items}" var="item"
+                                 selectionMode="single" selection="#{blodTestRequestController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50">
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_leukocytes}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.leukocytes}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_hematies}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hematies}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_hemoglobin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hemoglobin}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_hematocrit}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hematocrit}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_VCM}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.VCM}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_HCM}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.HCM}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_CMCH}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.CMCH}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_RDW}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.RDW}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_platelets}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.platelets}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_VPM}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.VPM}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_glucose}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.glucose}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_urea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.urea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_creatinine}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.creatinine}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_sodium}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sodium}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_potassium}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.potassium}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_totalCholesterol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.totalCholesterol}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_HDLcholesterol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.HDLcholesterol}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_VLDLcholesterol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.VLDLcholesterol}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_LDLcholesterol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.LDLcholesterol}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_TG}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.TG}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_lipoproteins}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lipoproteins}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_acAscorbic}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.acAscorbic}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_vitaE}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vitaE}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_vitaA}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vitaA}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_vitaB}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vitaB}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_vitaD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vitaD}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_iodo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.iodo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_faith}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.faith}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_znc}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.znc}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_mg}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mg}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_albumin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.albumin}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_prealbumin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.prealbumin}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_transferrin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transferrin}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_igAsecretor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.igAsecretor}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_igdosage}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.igdosage}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_igGsubclasses}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.igGsubclasses}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBlodTestRequestTitle_patientId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.patientId}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{blodTestRequestController.prepareCreate}" update=":BlodTestRequestCreateForm" oncomplete="PF('BlodTestRequestCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":BlodTestRequestViewForm" oncomplete="PF('BlodTestRequestViewDialog').show()" disabled="#{empty blodTestRequestController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":BlodTestRequestEditForm" oncomplete="PF('BlodTestRequestEditDialog').show()" disabled="#{empty blodTestRequestController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{blodTestRequestController.destroy}" update=":growl,datalist" disabled="#{empty blodTestRequestController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

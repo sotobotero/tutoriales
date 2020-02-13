@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PatientDataRequestViewDlg" widgetVar="PatientDataRequestViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewPatientDataRequestTitle}">
+            <h:form id="PatientDataRequestViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="6" rendered="#{patientDataRequestController.selected != null}">
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_id}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.id}" title="#{bundle.ViewPatientDataRequestTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_patientDocumentNumber}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.patientDocumentNumber}" title="#{bundle.ViewPatientDataRequestTitle_patientDocumentNumber}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_name}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.name}" title="#{bundle.ViewPatientDataRequestTitle_name}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_phone}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.phone}" title="#{bundle.ViewPatientDataRequestTitle_phone}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_addres}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.addres}" title="#{bundle.ViewPatientDataRequestTitle_addres}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_surname}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.surname}" title="#{bundle.ViewPatientDataRequestTitle_surname}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_birdDate}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.birdDate}" title="#{bundle.ViewPatientDataRequestTitle_birdDate}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_team}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.team}" title="#{bundle.ViewPatientDataRequestTitle_team}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_weight}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.weight}" title="#{bundle.ViewPatientDataRequestTitle_weight}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_size}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.size}" title="#{bundle.ViewPatientDataRequestTitle_size}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_IMC}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.IMC}" title="#{bundle.ViewPatientDataRequestTitle_IMC}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_folds}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.folds}" title="#{bundle.ViewPatientDataRequestTitle_folds}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_perimeters}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.perimeters}" title="#{bundle.ViewPatientDataRequestTitle_perimeters}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_diameters}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.diameters}" title="#{bundle.ViewPatientDataRequestTitle_diameters}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_allergiesMedical}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.allergiesMedical}" title="#{bundle.ViewPatientDataRequestTitle_allergiesMedical}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_food}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.food}" title="#{bundle.ViewPatientDataRequestTitle_food}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_other}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.other}" title="#{bundle.ViewPatientDataRequestTitle_other}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_pastMedical}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.pastMedical}" title="#{bundle.ViewPatientDataRequestTitle_pastMedical}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_surgical}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.surgical}" title="#{bundle.ViewPatientDataRequestTitle_surgical}"/>
+                        <h:outputText value="#{bundle.ViewPatientDataRequestLabel_traumatiInjuries}"/>
+                        <h:outputText value="#{patientDataRequestController.selected.traumatiInjuries}" title="#{bundle.ViewPatientDataRequestTitle_traumatiInjuries}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="PatientDataRequestViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="BlodTestRequestCreateDlg" widgetVar="BlodTestRequestCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateBlodTestRequestTitle}">
+            <h:form id="BlodTestRequestCreateForm">
+                <h:panelGroup id="display">
+                    <h:panelGrid columns="6" rendered="#{blodTestRequestController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_leukocytes}" for="leukocytes" />
+                        <p:inputText id="leukocytes" value="#{blodTestRequestController.selected.leukocytes}" title="#{bundle.CreateBlodTestRequestTitle_leukocytes}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_hematies}" for="hematies" />
+                        <p:inputText id="hematies" value="#{blodTestRequestController.selected.hematies}" title="#{bundle.CreateBlodTestRequestTitle_hematies}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_hemoglobin}" for="hemoglobin" />
+                        <p:inputText id="hemoglobin" value="#{blodTestRequestController.selected.hemoglobin}" title="#{bundle.CreateBlodTestRequestTitle_hemoglobin}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_hematocrit}" for="hematocrit" />
+                        <p:inputText id="hematocrit" value="#{blodTestRequestController.selected.hematocrit}" title="#{bundle.CreateBlodTestRequestTitle_hematocrit}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_VCM}" for="VCM" />
+                        <p:inputText id="VCM" value="#{blodTestRequestController.selected.VCM}" title="#{bundle.CreateBlodTestRequestTitle_VCM}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_HCM}" for="HCM" />
+                        <p:inputText id="HCM" value="#{blodTestRequestController.selected.HCM}" title="#{bundle.CreateBlodTestRequestTitle_HCM}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_CMCH}" for="CMCH" />
+                        <p:inputText id="CMCH" value="#{blodTestRequestController.selected.CMCH}" title="#{bundle.CreateBlodTestRequestTitle_CMCH}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_RDW}" for="RDW" />
+                        <p:inputText id="RDW" value="#{blodTestRequestController.selected.RDW}" title="#{bundle.CreateBlodTestRequestTitle_RDW}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_platelets}" for="platelets" />
+                        <p:inputText id="platelets" value="#{blodTestRequestController.selected.platelets}" title="#{bundle.CreateBlodTestRequestTitle_platelets}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_VPM}" for="VPM" />
+                        <p:inputText id="VPM" value="#{blodTestRequestController.selected.VPM}" title="#{bundle.CreateBlodTestRequestTitle_VPM}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_glucose}" for="glucose" />
+                        <p:inputText id="glucose" value="#{blodTestRequestController.selected.glucose}" title="#{bundle.CreateBlodTestRequestTitle_glucose}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_urea}" for="urea" />
+                        <p:inputText id="urea" value="#{blodTestRequestController.selected.urea}" title="#{bundle.CreateBlodTestRequestTitle_urea}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_creatinine}" for="creatinine" />
+                        <p:inputText id="creatinine" value="#{blodTestRequestController.selected.creatinine}" title="#{bundle.CreateBlodTestRequestTitle_creatinine}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_sodium}" for="sodium" />
+                        <p:inputText id="sodium" value="#{blodTestRequestController.selected.sodium}" title="#{bundle.CreateBlodTestRequestTitle_sodium}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_potassium}" for="potassium" />
+                        <p:inputText id="potassium" value="#{blodTestRequestController.selected.potassium}" title="#{bundle.CreateBlodTestRequestTitle_potassium}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_totalCholesterol}" for="totalCholesterol" />
+                        <p:inputText id="totalCholesterol" value="#{blodTestRequestController.selected.totalCholesterol}" title="#{bundle.CreateBlodTestRequestTitle_totalCholesterol}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_HDLcholesterol}" for="HDLcholesterol" />
+                        <p:inputText id="HDLcholesterol" value="#{blodTestRequestController.selected.HDLcholesterol}" title="#{bundle.CreateBlodTestRequestTitle_HDLcholesterol}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_VLDLcholesterol}" for="VLDLcholesterol" />
+                        <p:inputText id="VLDLcholesterol" value="#{blodTestRequestController.selected.VLDLcholesterol}" title="#{bundle.CreateBlodTestRequestTitle_VLDLcholesterol}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_LDLcholesterol}" for="LDLcholesterol" />
+                        <p:inputText id="LDLcholesterol" value="#{blodTestRequestController.selected.LDLcholesterol}" title="#{bundle.CreateBlodTestRequestTitle_LDLcholesterol}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_TG}" for="TG" />
+                        <p:inputText id="TG" value="#{blodTestRequestController.selected.TG}" title="#{bundle.CreateBlodTestRequestTitle_TG}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_lipoproteins}" for="lipoproteins" />
+                        <p:inputText id="lipoproteins" value="#{blodTestRequestController.selected.lipoproteins}" title="#{bundle.CreateBlodTestRequestTitle_lipoproteins}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_acAscorbic}" for="acAscorbic" />
+                        <p:inputText id="acAscorbic" value="#{blodTestRequestController.selected.acAscorbic}" title="#{bundle.CreateBlodTestRequestTitle_acAscorbic}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_vitaE}" for="vitaE" />
+                        <p:inputText id="vitaE" value="#{blodTestRequestController.selected.vitaE}" title="#{bundle.CreateBlodTestRequestTitle_vitaE}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_vitaA}" for="vitaA" />
+                        <p:inputText id="vitaA" value="#{blodTestRequestController.selected.vitaA}" title="#{bundle.CreateBlodTestRequestTitle_vitaA}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_vitaB}" for="vitaB" />
+                        <p:inputText id="vitaB" value="#{blodTestRequestController.selected.vitaB}" title="#{bundle.CreateBlodTestRequestTitle_vitaB}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_vitaD}" for="vitaD" />
+                        <p:inputText id="vitaD" value="#{blodTestRequestController.selected.vitaD}" title="#{bundle.CreateBlodTestRequestTitle_vitaD}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_iodo}" for="iodo" />
+                        <p:inputText id="iodo" value="#{blodTestRequestController.selected.iodo}" title="#{bundle.CreateBlodTestRequestTitle_iodo}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_faith}" for="faith" />
+                        <p:inputText id="faith" value="#{blodTestRequestController.selected.faith}" title="#{bundle.CreateBlodTestRequestTitle_faith}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_znc}" for="znc" />
+                        <p:inputText id="znc" value="#{blodTestRequestController.selected.znc}" title="#{bundle.CreateBlodTestRequestTitle_znc}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_mg}" for="mg" />
+                        <p:inputText id="mg" value="#{blodTestRequestController.selected.mg}" title="#{bundle.CreateBlodTestRequestTitle_mg}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_albumin}" for="albumin" />
+                        <p:inputText id="albumin" value="#{blodTestRequestController.selected.albumin}" title="#{bundle.CreateBlodTestRequestTitle_albumin}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_prealbumin}" for="prealbumin" />
+                        <p:inputText id="prealbumin" value="#{blodTestRequestController.selected.prealbumin}" title="#{bundle.CreateBlodTestRequestTitle_prealbumin}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_transferrin}" for="transferrin" />
+                        <p:inputText id="transferrin" value="#{blodTestRequestController.selected.transferrin}" title="#{bundle.CreateBlodTestRequestTitle_transferrin}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_igAsecretor}" for="igAsecretor" />
+                        <p:inputText id="igAsecretor" value="#{blodTestRequestController.selected.igAsecretor}" title="#{bundle.CreateBlodTestRequestTitle_igAsecretor}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_igdosage}" for="igdosage" />
+                        <p:inputText id="igdosage" value="#{blodTestRequestController.selected.igdosage}" title="#{bundle.CreateBlodTestRequestTitle_igdosage}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_igGsubclasses}" for="igGsubclasses" />
+                        <p:inputText id="igGsubclasses" value="#{blodTestRequestController.selected.igGsubclasses}" title="#{bundle.CreateBlodTestRequestTitle_igGsubclasses}" />
+                        <p:outputLabel value="#{bundle.CreateBlodTestRequestLabel_patientId}" for="patientId" />
+                        <p:inputText id="patientId" value="#{blodTestRequestController.selected.patientId}" title="#{bundle.CreateBlodTestRequestTitle_patientId}" />
+                    </h:panelGrid>
+                    <p:commandButton actionListener="#{blodTestRequestController.create}" value="#{bundle.Save}" update="display,:BlodTestRequestListForm:datalist,:growl" oncomplete="handleSubmit(args,'BlodTestRequestCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="BlodTestRequestCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

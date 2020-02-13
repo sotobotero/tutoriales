@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DisbiosisRequestCreateDlg" widgetVar="DisbiosisRequestCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateDisbiosisRequestTitle}">
+            <h:form id="DisbiosisRequestCreateForm">
+                <h:panelGroup id="display">
+                    <h:panelGrid columns="2" rendered="#{disbiosisRequestController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateDisbiosisRequestLabel_file}" for="file" />
+                        <p:inputText id="file" value="#{disbiosisRequestController.selected.file}" title="#{bundle.CreateDisbiosisRequestTitle_file}" />
+                        <p:outputLabel value="#{bundle.CreateDisbiosisRequestLabel_patientId}" for="patientId" />
+                        <p:inputText id="patientId" value="#{disbiosisRequestController.selected.patientId}" title="#{bundle.CreateDisbiosisRequestTitle_patientId}" />
+                    </h:panelGrid>
+                    <p:commandButton actionListener="#{disbiosisRequestController.create}" value="#{bundle.Save}" update="display,:DisbiosisRequestListForm:datalist,:growl" oncomplete="handleSubmit(args,'DisbiosisRequestCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DisbiosisRequestCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

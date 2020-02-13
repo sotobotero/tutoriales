@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HabitsSymtomRequestViewDlg" widgetVar="HabitsSymtomRequestViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewHabitsSymtomRequestTitle}">
+            <h:form id="HabitsSymtomRequestViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="6" rendered="#{habitsSymtomRequestController.selected != null}">
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_id}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.id}" title="#{bundle.ViewHabitsSymtomRequestTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_sleepHours}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.sleepHours}" title="#{bundle.ViewHabitsSymtomRequestTitle_sleepHours}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_diet}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.diet}" title="#{bundle.ViewHabitsSymtomRequestTitle_diet}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_nutritionalSupplements}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.nutritionalSupplements}" title="#{bundle.ViewHabitsSymtomRequestTitle_nutritionalSupplements}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_bristol}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.bristol}" title="#{bundle.ViewHabitsSymtomRequestTitle_bristol}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_dailyDepositions}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.dailyDepositions}" title="#{bundle.ViewHabitsSymtomRequestTitle_dailyDepositions}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_weeklyDepositions}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.weeklyDepositions}" title="#{bundle.ViewHabitsSymtomRequestTitle_weeklyDepositions}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_abdominalPain}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.abdominalPain}" title="#{bundle.ViewHabitsSymtomRequestTitle_abdominalPain}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_abdominalDistension}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.abdominalDistension}" title="#{bundle.ViewHabitsSymtomRequestTitle_abdominalDistension}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_defecatoryHabitHappy}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.defecatoryHabitHappy}" title="#{bundle.ViewHabitsSymtomRequestTitle_defecatoryHabitHappy}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_IBSSeverityScore}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.IBSSeverityScore}" title="#{bundle.ViewHabitsSymtomRequestTitle_IBSSeverityScore}"/>
+                        <h:outputText value="#{bundle.ViewHabitsSymtomRequestLabel_patientId}"/>
+                        <h:outputText value="#{habitsSymtomRequestController.selected.patientId}" title="#{bundle.ViewHabitsSymtomRequestTitle_patientId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="HabitsSymtomRequestViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

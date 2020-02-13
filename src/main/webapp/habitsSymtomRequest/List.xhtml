@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="HabitsSymtomRequestListForm">
+                <p:panel header="#{bundle.ListHabitsSymtomRequestTitle}">
+                    <p:dataTable id="datalist" value="#{habitsSymtomRequestController.items}" var="item"
+                                 selectionMode="single" selection="#{habitsSymtomRequestController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_sleepHours}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sleepHours}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_diet}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.diet}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_nutritionalSupplements}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritionalSupplements}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_bristol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bristol}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_dailyDepositions}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dailyDepositions}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_weeklyDepositions}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.weeklyDepositions}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_abdominalPain}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.abdominalPain}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_abdominalDistension}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.abdominalDistension}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_defecatoryHabitHappy}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.defecatoryHabitHappy}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_IBSSeverityScore}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.IBSSeverityScore}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitsSymtomRequestTitle_patientId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.patientId}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{habitsSymtomRequestController.prepareCreate}" update=":HabitsSymtomRequestCreateForm" oncomplete="PF('HabitsSymtomRequestCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":HabitsSymtomRequestViewForm" oncomplete="PF('HabitsSymtomRequestViewDialog').show()" disabled="#{empty habitsSymtomRequestController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":HabitsSymtomRequestEditForm" oncomplete="PF('HabitsSymtomRequestEditDialog').show()" disabled="#{empty habitsSymtomRequestController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{habitsSymtomRequestController.destroy}" update=":growl,datalist" disabled="#{empty habitsSymtomRequestController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>
