@@ -5,13 +5,14 @@
  */
 package com.altamira.PatientData.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author sotobotero
  */
-public class PatientDataRequest {
+public class PatientDataRequest implements Serializable {
     
     private long id;
     

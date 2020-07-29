@@ -8,6 +8,7 @@ package com.altamira.PatientData.dao;
 
 import com.altamira.PatientData.entities.PatientData;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  *
@@ -15,4 +16,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface PatientDataRepository extends JpaRepository<PatientData, String>{
     
+   
+  @Query(value = "SELECT * FROM patient_data WHERE id = ?1", nativeQuery = true)
+  public PatientData findById(long id);
+    
+  @Query(value = "SELECT * FROM patient_data WHERE name ilike  ?1", nativeQuery = true)
+  public PatientData findByName(String name);
 }

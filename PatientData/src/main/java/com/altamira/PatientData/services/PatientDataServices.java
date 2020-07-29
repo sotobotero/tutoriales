@@ -30,4 +30,12 @@ public class PatientDataServices {
         return demoRepository.findAll();
     }
     
+     public  PatientData getPatient(long id){
+        return demoRepository.findById(id);
+    }
+     
+      public  PatientData getPatientbyName(String name){
+        return demoRepository.findByName(name);
+    }
+    
 }
